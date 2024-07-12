@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trello Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <dialog>
+        <h1 class="modal_logo">Trello</h1>
+        <form class="add_task_form" name="add_task">
+            <input required placeholder="title" type="text" name="title">
+            <input required placeholder="description" type="text" name="description">
+            <select required class="status_select" name="status">
+                <option value="todo">todo</option>
+                <option value="inProgress">inProgress</option>
+                <option value="completed">completed</option>
+            </select>
+            <button class="submit_addTask">Добавить</button>
+        </form>
+
+        <button class="close_modal">X</button>
+    </dialog>
+
+
+    <header>
+        <div class="header-left">
+            <div class="logo">Trello</div>
+            <div class="menu-item">Рабочие пространства</div>
+            <div class="menu-item">Недавние</div>
+            <div class="menu-item">В избранном</div>
+            <div class="menu-item">Шаблоны</div>
+            <button class="create-btn">Создать</button>
+        </div>
+        <div class="header-right">
+            <input type="text" class="search-input" placeholder="Поиск">
+            <button class="icon-btn">🔔</button>
+            <button class="icon-btn">⚡</button>
+            <button class="icon-btn">P</button>
+        </div>
+    </header>
+    <main>
+        <div class="board-header">
+            <div class="board-title">desk</div>
+            <button class="board-options-btn">⚙️ По доске</button>
+        </div>
+        <div class="board">
+            <div class="list">
+                <div class="list-header">Задание</div>
+                
+                <div class="todos">
+
+                </div>
+                
+                <button class="add-card-btn">+ Добавить карточку</button>
+            </div>
+            <div class="list">
+                <div class="list-header">В процессе</div>
+                
+                <div class="inprogress">
+
+                </div>
+
+                <button class="add-card-btn">+ Добавить карточку</button>
+            </div>
+            <div class="list">
+                <div class="list-header">Готово</div>
+
+                <div class="ready">
+
+                </div>
+                
+                <button class="add-card-btn">+ Добавить карточку</button>
+            </div>
+            <button class="add-list-btn">+ Добавьте еще одну колонку</button>
+        </div>
+    </main>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>

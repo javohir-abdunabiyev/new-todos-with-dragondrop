@@ -1,0 +1,18 @@
+{
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "json-server -p 8080 -w db.json",
+    "dev": "concurrently \"vite --host\" \"json-server -p 8080 -w db.json \"",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

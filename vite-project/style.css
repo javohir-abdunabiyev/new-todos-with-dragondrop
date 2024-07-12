@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #752B5C;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #2D2D2D;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .logo {
+    font-size: 24px;
+    margin-right: 20px;
+}
+
+.header-left .menu-item {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.header-left .create-btn {
+    background-color: #0079BF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 15px;
+    border-radius: 3px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right .search-input {
+    background-color: #3B3B3B;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 15px;
+    border-radius: 3px;
+}
+
+.header-right .icon-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.board-title {
+    font-size: 24px;
+}
+
+.board-options-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.board {
+    display: flex;
+    align-items: flex-start;
+}
+
+.list {
+    background-color: #3B3B3B;
+    padding: 10px;
+    border-radius: 12px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.list-header {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card {
+    background-color: #2D2D2D;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.add-card-btn, .add-list-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.add-list-btn {
+    background-color: #6C6C6C;
+    padding: 10px;
+    border-radius: 12px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+dialog {
+    position: relative;
+    width: 400px;
+    height: 350px;
+    background-color: #2D2D2D;
+    border: none;
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+input {
+    padding-left: 10px;
+    color: white;
+}
+
+.add_task_form input {
+    width: 300px;
+    height: 40px;
+    background: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+
+}
+
+.add_task_form input::placeholder {
+    color: gainsboro;
+    padding-left: 15px;
+
+}
+
+.status_select {
+    width: 314px;
+    height: 40px;
+    background: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: white;
+}
+
+option {
+    color: black;
+}
+
+.submit_addTask {
+    width: 314px;
+    height: 50px;
+    background: #0079BF;
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    margin-top: 20px;
+}
+
+.modal_logo {
+    color: white;
+    text-align: center;
+}
+
+select {
+    padding-left: 20px;
+}
+
+.close_modal {
+    color: white;
+    background: none;
+    border: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.todos_div {
+    word-wrap: break-word; /* или word-break: break-all; */
+    white-space: pre-wrap; /* Это также поможет с переносом */
+    width: Hug (256px)px;
+    height: Hug (36px)px;
+    padding: 8px 8px 8px 12px;
+    gap: 0px;
+    opacity: 0px;
+    border-radius: 8px;
+    background: rgba(34, 39, 43, 1);
+    color: white;
+    margin-bottom: 5px;
+}
