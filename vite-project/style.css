@@ -237,13 +237,16 @@ select {
 }
 
 .todos {
+    height: 100%;
     min-height: 15px;
 }
 
 .inprogress {
+    height: 100%;
     min-height: 15px;
 }
 
 .ready {
+    height: 100%;
     min-height: 15px;
 }
