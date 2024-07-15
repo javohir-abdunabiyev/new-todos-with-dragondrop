@@ -235,3 +235,15 @@ select {
     width: 80px;
     height: 80px;
 }
+
+.todos {
+    min-height: 15px;
+}
+
+.inprogress {
+    min-height: 15px;
+}
+
+.ready {
+    min-height: 15px;
+}
