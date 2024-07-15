@@ -3,6 +3,7 @@ import { deleteData } from "../http"
 
 export const bin = document.querySelector(".bin")
 
+
 bin.ondrop = async (e) => {
     try {
         const droppingElem = document.querySelector("[data-selected]");
