@@ -228,7 +228,7 @@ select {
 }
 
 .bin {
-    
+    display: none;
     position: absolute;
     bottom: 60px;
     right: 60px;

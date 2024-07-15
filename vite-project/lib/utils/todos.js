@@ -1,8 +1,8 @@
 import { todosDrag } from "./drags";
 import { containers } from "../..";
 import { patchData } from "../http";
-import { deleteData } from "../http";
-import { bin } from "./drags";
+// import { deleteData } from "../http";
+// import { bin } from "./drags";
 
 for (let container of containers) {
     container.ondrop = async (e) => {
@@ -21,9 +21,7 @@ for (let container of containers) {
             await patchData(`/todos/${taskId}`, updatedTask);
 
 
-            bin.ondrop = async () => {
-                await deleteData(`/todos/${taskId}`)
-            }
+            
 
 
         } catch (error) {
@@ -31,6 +29,20 @@ for (let container of containers) {
         }
     };
 }
+
+// bin.ondrop = async (e) => {
+//     try {
+//         const droppingElem = document.querySelector("[data-selected]");
+//         if (droppingElem) {
+//             const taskId = droppingElem.id;
+//             await deleteData(`/todos/${taskId}`);
+//             droppingElem.remove();
+//         }
+//     } catch (error) {
+//         console.error(error);
+//     }
+// };
+
 
 export function todosload(item) {
     const todos_div = document.createElement("div");

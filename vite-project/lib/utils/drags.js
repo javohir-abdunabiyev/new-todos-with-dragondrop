@@ -3,6 +3,22 @@ import { deleteData } from "../http"
 
 export const bin = document.querySelector(".bin")
 
+bin.ondrop = async (e) => {
+    try {
+        const droppingElem = document.querySelector("[data-selected]");
+        if (droppingElem) {
+            const taskId = droppingElem.id;
+            await deleteData(`/todos/${taskId}`);
+            droppingElem.remove();
+            console.log(`Задача с id ${taskId} удалена`);
+        } else {
+            console.error("Элемент для удаления не найден");
+        }
+    } catch (error) {
+        console.error('Ошибка при удалении задачи:', error);
+    }
+};
+
 
 export function todosDrag(todos) {
     for (let container of containers) {
@@ -34,9 +50,6 @@ export function todosDrag(todos) {
         bin.src = "/img/closedbin.png"
     }
 
-    
-
-    
 
     todos.ondragstart = () => {
         todos.dataset.selected = true
@@ -51,6 +64,7 @@ export function todosDrag(todos) {
     todos.ondragend = () => {
         delete todos.dataset.selected
         todos.classList.remove("hide")
+        bin.style.display = "none"
         // bin.style.display = "none"
     }
 }
