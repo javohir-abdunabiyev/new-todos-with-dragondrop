@@ -15,9 +15,9 @@
             <input required placeholder="title" type="text" name="title">
             <input required placeholder="description" type="text" name="description">
             <select required class="status_select" name="status">
-                <option value="todo">todo</option>
-                <option value="inProgress">inProgress</option>
-                <option value="completed">completed</option>
+                <option value="0">todo</option>
+                <option value="1">inProgress</option>
+                <option value="2">completed</option>
             </select>
             <button class="submit_addTask">Добавить</button>
         </form>
@@ -51,7 +51,7 @@
             <div class="list">
                 <div class="list-header">Задание</div>
                 
-                <div class="todos">
+                <div class="todos" data-status="0">
 
                 </div>
                 
@@ -60,7 +60,7 @@
             <div class="list">
                 <div class="list-header">В процессе</div>
                 
-                <div class="inprogress">
+                <div class="inprogress" data-status="1">
 
                 </div>
 
@@ -69,7 +69,7 @@
             <div class="list">
                 <div class="list-header">Готово</div>
 
-                <div class="ready">
+                <div class="ready" data-status="2">
 
                 </div>
                 
@@ -79,6 +79,11 @@
         </div>
     </main>
 
+
+    <img class="bin" src="img/closedbin.png" alt="">
+
+
     <script type="module" src="index.js"></script>
+    <script type="module" src="/lib/utils/drags.js"></script>
 </body>
 </html>

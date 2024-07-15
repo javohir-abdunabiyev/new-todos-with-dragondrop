@@ -6,30 +6,14 @@ import { getData } from "./lib/http"
 const modal_form = document.querySelector("dialog")
 const dialog_open_btn = document.querySelector(".create-btn")
 const close_modal = document.querySelector(".close_modal")
-
-
+const add_card_btn = document.querySelector(".add-card-btn")
 const form = document.forms.namedItem("add_task")
-
-const todos_place = document.querySelector(".todos")
-
-const inprogress_place = document.querySelector(".inprogress")
-
-const ready_place = document.querySelector(".ready")
+export const containers = document.querySelectorAll("[data-status]")
 
 
-let allTasks = JSON.parse(localStorage.getItem('tasks')) || []
-
-const setItemStorage = () => {
-    localStorage.setItem('tasks', JSON.stringify(allTasks))
-    
+add_card_btn.onclick = () => {
+    modal_form.showModal()
 }
-
-window.onload = () => {
-    reload(allTasks.filter(t => t.status === 'todo'), todosload, todos_place)
-    reload(allTasks.filter(t => t.status === 'inProgress'), todosload, inprogress_place)
-    reload(allTasks.filter(t => t.status === 'completed'), todosload, ready_place)
-}
-
 
 
 dialog_open_btn.onclick = () => {
@@ -39,6 +23,13 @@ dialog_open_btn.onclick = () => {
 close_modal.onclick = () => {
     modal_form.close()
 }
+
+getData("/todos")
+    .then(res => {
+        const tasks = res.data
+        reload(tasks, todosload, containers)
+    })
+
 
 form.onsubmit = async (e) => {
     e.preventDefault()
@@ -59,20 +50,12 @@ form.onsubmit = async (e) => {
             alert('Успешно');
             form.reset();
 
-            allTasks.push(tasks)
-            setItemStorage()
-
             getData("/todos")
                 .then(res => {
-                    const task = res.data
-                        if (tasks.status === "todo") {
-                            reload(task.filter(t => t.status === 'todo'), todosload, todos_place);
-                        } else if (tasks.status === "inProgress") {
-                            reload(task.filter(t => t.status === 'inProgress'), todosload, inprogress_place);
-                        } else if (tasks.status === "completed") {
-                            reload(task.filter(t => t.status === 'completed'), todosload, ready_place);
-                        }
+                    reload(res.data, todosload, containers)
                 })
+
+            
         }
 
         
@@ -83,5 +66,3 @@ form.onsubmit = async (e) => {
     }
 
 }
-
-

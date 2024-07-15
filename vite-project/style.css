@@ -4,6 +4,7 @@ body {
     padding: 0;
     background-color: #752B5C;
     color: white;
+    /* position: relative; */
 }
 
 header {
@@ -215,4 +216,22 @@ select {
     background: rgba(34, 39, 43, 1);
     color: white;
     margin-bottom: 5px;
+}
+
+.hovered {
+    backdrop-filter: blur(2px);
+    border: 2px dashed orange;
+}
+
+.hide {
+    display: none;
+}
+
+.bin {
+    
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 80px;
+    height: 80px;
 }

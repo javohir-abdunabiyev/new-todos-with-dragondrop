@@ -1,9 +1,9 @@
-export function reload(arr, component, place) {
-    place.innerHTML = ""
+export function reload(arr, component, places) {
+    places.forEach(place => place.innerHTML = "")
 
     for(let item of arr) {
         const elem = component(item)
 
-        place.append(elem)
+        places[item.status].append(elem)
     }
 }
